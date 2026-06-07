@@ -1,0 +1,419 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harshini P | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(15,23,42,0.9);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:1.5rem;
+font-weight:700;
+color:#38bdf8;
+}
+
+.nav-links a{
+margin-left:20px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#38bdf8;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:120px 10%;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.hero-img img{
+width:320px;
+height:320px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid #38bdf8;
+box-shadow:0 0 40px rgba(56,189,248,0.5);
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.hero-text span{
+color:#38bdf8;
+}
+
+.hero-text p{
+font-size:1.1rem;
+line-height:1.8;
+color:#cbd5e1;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+margin-right:10px;
+padding:12px 24px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+font-weight:600;
+border-radius:30px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:90px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:2.3rem;
+margin-bottom:50px;
+color:#38bdf8;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+}
+
+.skill{
+background:#1e293b;
+padding:20px;
+text-align:center;
+border-radius:15px;
+transition:0.3s;
+}
+
+.skill:hover{
+transform:translateY(-8px);
+background:#334155;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.project{
+background:#1e293b;
+padding:25px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-10px);
+}
+
+.project h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:inline-block;
+margin:10px;
+padding:12px 22px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero{
+text-align:center;
+}
+
+.hero-text h1{
+font-size:2.2rem;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+display:none;
+}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="logo">Harshini P</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+
+<div class="hero-img">
+<img src="profile.jpg" alt="Harshini P">
+</div>
+
+<div class="hero-text">
+
+<h1>Hello, I'm <span>Harshini P</span></h1>
+
+<p>
+Computer Science Engineering Student • AI Enthusiast •
+Full Stack Developer • Problem Solver
+</p>
+
+<a href="#" class="btn">Download Resume</a>
+
+<a href="https://www.linkedin.com/in/harshini-p-844b39339" target="_blank" class="btn">
+LinkedIn
+</a>
+
+<a href="https://github.com/harshinirithish7-hash" target="_blank" class="btn">
+GitHub
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+
+<p>
+I am Harshini P, a passionate Computer Science Engineering student
+at SRM Madurai College for Engineering and Technology with a CGPA of 8.5.
+I am interested in Artificial Intelligence, Full Stack Development,
+Software Engineering and emerging technologies.
+</p>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="about-grid">
+
+<div class="card">
+<h3>B.E Computer Science Engineering</h3>
+<br>
+<p>SRM Madurai College for Engineering and Technology</p>
+<p>Current Year: 2nd Year</p>
+<p>CGPA: 8.5</p>
+</div>
+
+<div class="card">
+<h3>Career Objective</h3>
+<br>
+<p>
+To become a skilled software engineer and contribute to innovative
+technology solutions while continuously enhancing my knowledge.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">React JS</div>
+<div class="skill">Node JS</div>
+<div class="skill">MongoDB</div>
+<div class="skill">Python</div>
+<div class="skill">Java</div>
+<div class="skill">Git</div>
+<div class="skill">GitHub</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>AI Health Assistant</h3>
+<p>
+AI-powered healthcare assistant that provides symptom analysis,
+health guidance and recommendations.
+</p>
+</div>
+
+<div class="project">
+<h3>Personal Portfolio Website</h3>
+<p>
+Modern responsive portfolio website showcasing projects,
+skills and achievements.
+</p>
+</div>
+
+<div class="project">
+<h3>Task Management Application</h3>
+<p>
+Full-stack web application for creating, updating and tracking tasks.
+</p>
+</div>
+
+<div class="project">
+<h3>Hackathon Projects</h3>
+<p>
+Innovative projects developed during coding competitions and hackathons.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Achievements</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>Hackathon Participation</h3>
+<p>Actively participated in technical competitions.</p>
+</div>
+
+<div class="project">
+<h3>CGPA 8.5</h3>
+<p>Maintaining strong academic performance.</p>
+</div>
+
+<div class="project">
+<h3>AI & Web Development</h3>
+<p>Focused on learning modern technologies.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="contact">
+
+<a href="mailto:harshinirithish7@gmail.com">
+Email Me
+</a>
+
+<a href="https://www.linkedin.com/in/harshini-p-844b39339" target="_blank">
+LinkedIn
+</a>
+
+<a href="https://github.com/harshinirithish7-hash" target="_blank">
+GitHub
+</a>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Harshini P | Designed & Developed with ❤️</p>
+</footer>
+
+</body>
+</html>
+```
