@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshini P | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #070b1a;
+            --card: #111827;
+            --card2: #1b2437;
+            --primary: #a855f7;
+            --secondary: #3b82f6;
+            --text: #ffffff;
+            --muted: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(168, 85, 247, .18), transparent 30%),
+                radial-gradient(circle at 80% 30%, rgba(59, 130, 246, .15), transparent 30%);
+            z-index: -1;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(7, 11, 26, .85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            padding: 120px 10%;
+            flex-wrap: wrap;
+        }
+
+        .profile {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid transparent;
+            background:
+                linear-gradient(#111827, #111827) padding-box,
+                linear-gradient(45deg, var(--secondary), var(--primary)) border-box;
+            box-shadow: 0 0 40px rgba(168, 85, 247, .4);
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-content h3 {
+            color: #d946ef;
+            font-size: 32px;
+        }
+
+        .hero-content h1 {
+            font-size: 70px;
+            font-weight: 700;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content h2 {
+            font-weight: 500;
+            margin: 15px 0;
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            line-height: 1.8;
+            color: var(--muted);
+            margin: 20px 0;
+        }
+
+        .btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #3b82f6;
+            color: white;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .title {
+            color: #d946ef;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .heading {
+            font-size: 48px;
+            margin-bottom: 35px;
+        }
+
+        .card {
+            background: rgba(17, 24, 39, .9);
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .05);
+        }
+
+        .timeline {
+            background: rgba(17, 24, 39, .9);
+            padding: 25px;
+            border-radius: 18px;
+            border-left: 4px solid #a855f7;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .progress {
+            height: 8px;
+            background: #263145;
+            margin-top: 12px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+        }
+
+        .project img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #1e293b;
+            border-radius: 8px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .contact {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+        }
+
+        @media(max-width:768px) {
+
+            .hero-content h1 {
+                font-size: 45px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .heading {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo"><span>HP</span> Harshini P</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+
+        <div class="profile">
+            <img src="profile.jpg" alt="Harshini P">
+        </div>
+
+        <div class="hero-content">
+            <h3>Hello, I'm</h3>
+            <h1>Harshini <span>P</span></h1>
+
+            <h2>Computer Science Engineering Student</h2>
+
+            <p class="highlight">
+                AI Enthusiast | Full-Stack Developer
+            </p>
+
+            <p>
+                I build innovative and scalable web applications and enjoy turning
+                ideas into real-world solutions through technology.
+            </p>
+
+            <div class="btns">
+                <a class="btn btn-primary" href="#">Download Resume</a>
+
+                <a class="btn" href="https://www.linkedin.com/in/harshini-p-844b39339" target="_blank">LinkedIn</a>
+
+                <a class="btn" href="https://github.com/harshinirithish7-hash" target="_blank">GitHub</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="about">
+
+        <div class="title">About Me</div>
+        <h2 class="heading">About Me</h2>
+
+        <div class="card">
+            I am a passionate Computer Science Engineering student at
+            SRM Madurai College for Engineering and Technology with a CGPA of 8.5.
+            My interests include Artificial Intelligence, Web Development,
+            Software Engineering, and emerging technologies.
+        </div>
+
+    </section>
+
+    <section id="education">
+
+        <div class="title">Education</div>
+        <h2 class="heading">Education</h2>
+
+        <div class="timeline">
+            <h3>B.E Computer Science Engineering</h3>
+            <p>SRM Madurai College for Engineering and Technology</p>
+            <p>Currently Pursuing 2nd Year</p>
+            <p>CGPA: 8.5</p>
+        </div>
+
+    </section>
+
+    <section id="skills">
+
+        <div class="title">Skills</div>
+        <h2 class="heading">Technical Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">HTML
+                <div class="progress"><span style="width:96%"></span></div>
+            </div>
+
+            <div class="skill">CSS
+                <div class="progress"><span style="width:90%"></span></div>
+            </div>
+
+            <div class="skill">JavaScript
+                <div class="progress"><span style="width:85%"></span></div>
+            </div>
+
+            <div class="skill">React.js
+                <div class="progress"><span style="width:80%"></span></div>
+            </div>
+
+            <div class="skill">Node.js
+                <div class="progress"><span style="width:80%"></span></div>
+            </div>
+
+            <div class="skill">MongoDB
+                <div class="progress"><span style="width:75%"></span></div>
+            </div>
+
+            <div class="skill">Python
+                <div class="progress"><span style="width:80%"></span></div>
+            </div>
+
+            <div class="skill">Java
+                <div class="progress"><span style="width:75%"></span></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="projects">
+
+        <div class="title">Projects</div>
+        <h2 class="heading">Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <img src="https://picsum.photos/600/400?1">
+                <div class="project-content">
+                    <h3>AI Health Assistant</h3>
+                    <p>AI-powered healthcare assistant for symptom analysis and recommendations.</p>
+                    <span class="badge">Python</span>
+                    <span class="badge">AI</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="https://picsum.photos/600/400?2">
+                <div class="project-content">
+                    <h3>Task Management App</h3>
+                    <p>Task tracking application with CRUD operations and authentication.</p>
+                    <span class="badge">MERN</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="https://picsum.photos/600/400?3">
+                <div class="project-content">
+                    <h3>Portfolio Website</h3>
+                    <p>Responsive personal portfolio showcasing projects and skills.</p>
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="title">Achievements</div>
+        <h2 class="heading">Achievements</h2>
+
+        <div class="achievements">
+
+            <div class="achievement">
+                <h3>🏆 Hackathon Participant</h3>
+                <p>Participated in multiple hackathons and built innovative solutions.</p>
+            </div>
+
+            <div class="achievement">
+                <h3>📜 Certifications</h3>
+                <p>Completed certifications in Python, AI and Web Development.</p>
+            </div>
+
+            <div class="achievement">
+                <h3>💻 Coding Practice</h3>
+                <p>Actively improving problem-solving and programming skills.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <div class="title">Contact</div>
+        <h2 class="heading">Let's Connect</h2>
+
+        <div class="contact">
+
+            <div>
+                <h3>Email</h3>
+                <p>harshinirithish7@gmail.com</p>
+            </div>
+
+            <div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/harshini-p-844b39339">
+                    View Profile
+                </a>
+            </div>
+
+            <div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/harshinirithish7-hash">
+                    View Repositories
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Harshini P • All Rights Reserved
+    </footer>
+
+    <script>
+        document.querySelectorAll("a[href^='#']").forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute("href"))
+                    .scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
